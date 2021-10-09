@@ -1,16 +1,16 @@
 package pilha;
 
-public class FluxoComTratamento {
-	
+public class FluxoComTratamentoMinhaException {
+
 	public static void main(String[] args) {
         System.out.println("Ini do main");
-//        try {
+        try {
        	metodo1();
-//        }catch (ArithmeticException | NullPointerException e) {
-//        	String msg = e.getMessage();
-//			System.out.println("Exceção: " + msg);
-//			e.printStackTrace();//mostra o rastro da exceção, por onde os erros passaram
-//		}
+        }catch (ArithmeticException | NullPointerException | MinhaException e) {
+        	String msg = e.getMessage();
+			System.out.println("Exceção: " + msg);
+			e.printStackTrace();//mostra o rastro da exceção, por onde os erros passaram
+		}
         
         System.out.println("Fim do main");
     }
@@ -26,7 +26,7 @@ public class FluxoComTratamento {
         
 //        ArithmeticException ex = new ArithmeticException("Deu Ruim!");
 //        throw ex;
-        throw new ArithmeticException("DEU PAU!! BUGO");
+        throw new MinhaException("Meu erro :(");
         //System.out.println("Fim do metodo2");
     }
 }
